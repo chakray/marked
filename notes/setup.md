@@ -1,5 +1,6 @@
 # installation
 
+__cli__
 ```
   npm i @chakray/marked marked --save
 ```

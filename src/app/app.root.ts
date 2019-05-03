@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-root',
@@ -14,4 +15,12 @@ export class AppRoot {
       content: '# h1 \n\n*italic* __bold__'
     }
   };
+  constructor(private http: HttpClient) {
+    const url = 'https://raw.githubusercontent.com/chakray/marked/master/notes/setup.md';
+    http.get(url, { responseType: 'text' }).subscribe(d => {
+      const [title, ...content] = d.split('\n');
+      const o = { title: title.split(' ')[1], content: content.join('\n') };
+      Object.assign(this.data.setup, o);
+    });
+  }
 }
