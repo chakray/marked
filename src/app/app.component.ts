@@ -7,4 +7,5 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'marked';
+  str = '# h1 \n\n*italic* __bold__';
 }
