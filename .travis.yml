@@ -1,0 +1,36 @@
+sudo: required
+language: node_js
+node_js:
+    - 10.8.0
+install:
+  - npm i
+script:
+  - npm install codecov -g
+  - npm run lint
+  # - npx ng build @chakray/marked
+  - npx ng test --watch=false --code-coverage
+  - BUILD=`date +%s`; sed -ie "s/BUILD/$BUILD/g" ./src/environments/environment.prod.ts
+  - npx ng build --prod --deploy-url /marked/ --base-href /marked/
+  - cp src/404.html dist/marked
+  # - npx typedoc projects/chakray/fbc/src
+  # - mv docs dist/marked
+cache:
+    directories:
+      - node_modules
+after_success:
+  - codecov
+comment_before_deploy:
+  - tar czf lib.tgz --transform 's/dist\/chakray\/fbc//g' dist/chakray/fbc
+deploy:
+  - provider: pages
+    local-dir: dist/marked
+    github-token: $github
+    skip-cleanup: true
+    keep-history: true
+  - provider: releases
+    api_key: $github
+    file: 'lib.tgz'
+    skip_cleanup: true
+    draft: true
+    on:
+      tags: true
