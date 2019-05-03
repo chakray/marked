@@ -6,7 +6,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.root.sass']
 })
 export class AppRoot {
-  mod = '@chakray/marked';
-  synopsis = 'angular + markdown'
-  installation = '# h1 \n\n*italic* __bold__';
+  data = {
+    mod: '@chakray/marked',
+    synopsis: 'angular + markdown',
+    setup: {
+      title: 'Installation',
+      content: '# h1 \n\n*italic* __bold__'
+    }
+  };
 }
