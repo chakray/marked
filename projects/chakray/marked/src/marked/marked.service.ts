@@ -1,13 +1,5 @@
 import { Inject, Injectable, InjectionToken } from '@angular/core';
-import { MdLib } from './lib';
-
-export function mockMdLib() {
-  return new MdLib();
-}
-export const mdLib = new InjectionToken<MdLib>('cm-mdlib', {
-  providedIn: 'root',
-  factory: mockMdLib
-});
+import { MdLib, mdLib } from './lib';
 
 @Injectable({ providedIn: 'root' })
 export class MarkedService {

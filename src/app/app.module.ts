@@ -7,7 +7,7 @@ import { CmMarkedMod, mdLib, MarkedLib } from '@chakray/marked';
 
 import { AppComponent } from './app.component';
 
-function mdFac() {
+export function mdFac() {
   return new MarkedLib(marked);
 }
 

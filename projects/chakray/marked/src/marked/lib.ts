@@ -1,3 +1,9 @@
+import { InjectionToken } from '@angular/core';
+
+export function mockMdLib() {
+  return new MdLib();
+}
+
 /**
  * common wrapper interface for markdown parser libraries
  */
@@ -11,3 +17,8 @@ export class MdLib {
     return 'default markedown parser - ' + str;
   }
 }
+
+export const mdLib = new InjectionToken<MdLib>('cm-mdlib', {
+  providedIn: 'root',
+  factory: mockMdLib
+});

@@ -1,8 +1,7 @@
 import { HostBinding, Input, Component, Inject } from '@angular/core';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 
-import { mdLib } from './marked.service';
-import { MdLib } from './lib';
+import { MdLib, mdLib } from './lib';
 
 /**
  * <cm-marked str='*markdown*'>
