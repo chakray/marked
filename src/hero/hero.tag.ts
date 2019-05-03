@@ -3,11 +3,11 @@ import { Hero } from './hero';
 
 const badges = [{
   text: 'Github',
-  logo: '/assets/github.png',
+  logo: 'https://github.com/chakray/marked/blob/master/src/assets/github.png?raw=true',
   url: 'https://github.com/chakray/marked'
 }, {
   text: 'Angular',
-  logo: '/assets/ng.png',
+  logo: 'https://github.com/chakray/marked/blob/master/src/assets/ng.png?raw=true',
   url: 'https://angular.io'
 }, {
   text: 'bmVsc29u',
