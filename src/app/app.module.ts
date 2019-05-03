@@ -5,7 +5,7 @@ import { NgModule } from '@angular/core';
 import * as marked from 'marked';
 import { CmMarkedMod, mdLib, MarkedLib } from '@chakray/marked';
 
-import { AppComponent } from './app.component';
+import { AppRoot } from './app.root';
 
 export function mdFac() {
   return new MarkedLib(marked);
@@ -13,7 +13,7 @@ export function mdFac() {
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppRoot
   ],
   imports: [
     RouterModule.forRoot([]),
@@ -23,6 +23,6 @@ export function mdFac() {
   providers: [
     { provide: mdLib, useFactory: mdFac }
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppRoot]
 })
 export class AppModule { }
