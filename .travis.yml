@@ -24,7 +24,8 @@ comment_before_deploy:
 before_deploy:
   - if [[ $TRAVIS_TAG ]]; then
       if [[ $PWD != *"dist/chakray/marked" ]]; then cd dist/chakray/marked; fi;
-    fi
+    fi;
+    echo =============== $PWD
 deploy:
   - provider: pages
     local-dir: dist/marked
