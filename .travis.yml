@@ -32,6 +32,7 @@ deploy:
     skip-cleanup: true
     keep-history: true
   - provider: npm
+    email: $npm_email
     api_key: $NPM_TOKEN
     skip_cleanup: true
     on:
