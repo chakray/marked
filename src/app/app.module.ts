@@ -1,4 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { Title } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
@@ -15,6 +16,9 @@ import { AppRoot } from './app.root';
     ChHeroMod,
     RouterModule.forRoot([]),
     BrowserModule
+  ],
+  providers: [
+    Title
   ],
   bootstrap: [AppRoot]
 })

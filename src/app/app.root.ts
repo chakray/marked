@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Title } from '@angular/platform-browser';
 import { HttpClient } from '@angular/common/http';
 
 @Component({
@@ -15,7 +16,9 @@ export class AppRoot {
       content: ''
     }
   };
-  constructor(private http: HttpClient) {
+  constructor(private title: Title,
+              private http: HttpClient) {
+    title.setTitle(this.data.mod);
     const url = 'https://raw.githubusercontent.com/chakray/marked/master/notes/setup.md';
     http.get(url, { responseType: 'text' }).subscribe(d => {
       const [title, ...content] = d.split('\n');
