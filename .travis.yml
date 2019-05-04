@@ -32,7 +32,7 @@ deploy:
     skip-cleanup: true
     keep-history: true
   - provider: npm
-    api_key: $npm
+    api_key: $NPM_TOKEN
     skip_cleanup: true
     on:
       tags: true
