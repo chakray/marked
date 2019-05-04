@@ -16,9 +16,9 @@ export class AppRoot {
       content: ''
     }
   };
-  constructor(private title: Title,
+  constructor(private ti: Title,
               private http: HttpClient) {
-    title.setTitle(this.data.mod);
+    ti.setTitle(this.data.mod);
     const url = 'https://raw.githubusercontent.com/chakray/marked/master/notes/setup.md';
     http.get(url, { responseType: 'text' }).subscribe(d => {
       const [title, ...content] = d.split('\n');
