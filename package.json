@@ -6,9 +6,9 @@
     "start": "ng serve",
     "build": "ng build",
     "test": "ng test",
-    "lint": "npm run lint:ts; npm run lint:html; npm run lint:sass",
+    "lint": "ng lint && npm run lint:html && npm run lint:sass",
     "lint:ts": "ng lint",
-    "lint:html": "htmlhint -f unix -i src/*.html,dist/**/*.html",
+    "lint:html": "htmlhint -f unix --ignore dist/**/*,coverage/**/*",
     "lint:sass": "sass-lint -c .sasslint -v",
     "e2e": "ng e2e"
   },
