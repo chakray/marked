@@ -12,7 +12,7 @@ export class AppRoot {
     synopsis: 'angular + markdown',
     setup: {
       title: 'Installation',
-      content: '# h1 \n\n*italic* __bold__'
+      content: ''
     }
   };
   constructor(private http: HttpClient) {

@@ -21,12 +21,21 @@ after_success:
   - codecov
 comment_before_deploy:
   - tar czf lib.tgz --transform 's/dist\/chakray\/fbc//g' dist/chakray/fbc
+before_deploy:
+  if ! [[ $TRAVIS_TAG ]]; then
+    cd dist/chakray/marked/
+  fi
 deploy:
   - provider: pages
     local-dir: dist/marked
     github-token: $github
     skip-cleanup: true
     keep-history: true
+  - provider: npm
+    api_key: $npm
+    skip_cleanup: true
+    on:
+      tags: true
   - provider: releases
     api_key: $github
     file: 'lib.tgz'
