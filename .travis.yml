@@ -21,11 +21,9 @@ after_success:
   - codecov
 comment_before_deploy:
   - tar czf lib.tgz --transform 's/dist\/chakray\/fbc//g' dist/chakray/fbc
-npm_before_deploy:
+before_deploy:
   - if [[ $TRAVIS_TAG ]]; then
-      echo $PWD;
-      ls;
-      cd dist/chakray/marked;
+      if [[ $PWD != *"dist/chakray/marked" ]]; then cd dist/chakray/marked; fi;
     fi
 deploy:
   - provider: pages
