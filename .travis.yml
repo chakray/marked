@@ -23,7 +23,9 @@ comment_before_deploy:
   - tar czf lib.tgz --transform 's/dist\/chakray\/fbc//g' dist/chakray/fbc
 before_deploy:
   - if [[ $TRAVIS_TAG ]]; then
-      cd dist/chakray/marked/;
+      echo $PWD;
+      ls;
+      cd dist/chakray/marked;
     fi
 deploy:
   - provider: pages
